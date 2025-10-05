@@ -1,0 +1,17 @@
+{
+  "name": "discord-lookup-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for Rolimons lookups",
+  "main": "lookup_bot.js",
+  "scripts": {
+    "start": "node lookup_bot.js"
+  },
+  "dependencies": {
+    "discord.js-selfbot-v13": "^3.6.1",
+    "axios": "^1.12.1",
+    "selenium-webdriver": "^4.33.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
