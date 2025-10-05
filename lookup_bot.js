@@ -17,11 +17,15 @@ const BOT_ID = process.env.BOT_ID || '';
 // All possible whois channels where responses might come from
 const WHOIS_CHANNEL_IDS = [
   LOOKUP_CHANNEL_ID,
-  '1135707897964265620'
+  '1135707897964265620',
+  '1393342132583927821', // lounge
+  '1403939114683863180', // trade lounge  
+  '1403939122904825856'  // trade ads
 ];
 
 // User IDs from environment variable (comma-separated) or file fallback
 const USER_IDS_ENV = process.env.USER_IDS; // Comma-separated list
+
 
 let driver;
 let userIdsToProcess = [];
@@ -64,6 +68,12 @@ async function initializeWebDriver() {
   try {
     const options = new chrome.Options();
     options.addArguments('--headless', '--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu', '--disable-web-security', '--disable-features=VizDisplayCompositor');
+    
+    // Set Chrome binary path for cloud environments
+    if (process.env.NODE_ENV === 'production') {
+        options.setChromeBinaryPath('/usr/bin/chromium');
+    }
+    
     driver = await new Builder().forBrowser('chrome').setChromeOptions(options).build();
     console.log('WebDriver initialized successfully');
   } catch (error) {
