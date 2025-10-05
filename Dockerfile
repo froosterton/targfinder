@@ -1,4 +1,4 @@
-FROM node:20-slim
+FROM node:18-slim
 
 # Install Chrome dependencies
 RUN apt-get update && apt-get install -y \
@@ -27,7 +27,7 @@ RUN CHROME_VERSION=$(google-chrome --version | cut -d " " -f3 | cut -d "." -f1) 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 COPY . .
 
