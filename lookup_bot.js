@@ -8,11 +8,11 @@ const fs = require('fs');
 require('dotenv').config();
 
 // Bot configuration from environment variables
-const TOKEN = process.env.DISCORD_TOKEN || 
-const LOOKUP_CHANNEL_ID = process.env.LOOKUP_CHANNEL_ID || 
-const WEBHOOK_URL = process.env.WEBHOOK_URL || 
-const PRIVATE_INV_WEBHOOK_URL = process.env.PRIVATE_INV_WEBHOOK_URL ||
-const BOT_ID = process.env.BOT_ID || 
+const TOKEN = process.env.DISCORD_TOKEN || '';
+const LOOKUP_CHANNEL_ID = process.env.LOOKUP_CHANNEL_ID || '';
+const WEBHOOK_URL = process.env.WEBHOOK_URL || '';
+const PRIVATE_INV_WEBHOOK_URL = process.env.PRIVATE_INV_WEBHOOK_URL || '';
+const BOT_ID = process.env.BOT_ID || '';
 
 // All possible whois channels where responses might come from
 const WHOIS_CHANNEL_IDS = [
